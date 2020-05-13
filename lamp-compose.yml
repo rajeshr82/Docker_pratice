@@ -1,0 +1,20 @@
+---
+version: '3.7'
+services:
+ mydb:
+  image: mysql
+  environment:
+   MYSQL_ROOT_PASSWORD: admin
+ 
+ apache:
+  image: httpd
+  ports:
+   - 9090:80
+  links:
+   - mydb:mysql
+ php:
+  image: php:7.2-apache
+  links:
+   - mydb:mysql
+   - apache:httpd
+...

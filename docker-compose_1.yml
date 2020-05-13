@@ -1,0 +1,16 @@
+---
+version: '3.7'
+services:
+ wordpress:
+  image: wordpress
+  restart: always
+  ports:
+   - 8080:80
+  links:
+   - mydb
+ mydb:
+  image: mysql:5
+  restart: always
+  environment:
+   MYSQL_ROOT_PASSWORD: admin
+...
