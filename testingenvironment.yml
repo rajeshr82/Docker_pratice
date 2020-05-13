@@ -1,0 +1,23 @@
+---
+version: '3.7'
+services:
+ hub:
+  image: selenium/hub
+  restart: always
+  ports:
+   - 4444:444
+ firefox:
+  image: selenium/node-firefox-debug
+  restart: always
+  ports:
+   - 5901:5900
+  links:
+   - hub:selenium
+ chrome:
+  image: selenium/node-chrome-debug
+  restart: always
+  ports:
+   - 5902:5900
+  links:
+   - hub:selenium
+...

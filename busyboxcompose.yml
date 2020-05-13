@@ -1,0 +1,17 @@
+---
+version: '3.7'
+services:
+ busybox1:
+  image: busybox
+  restart: always
+ busybox2:
+  image: busybox
+  restart: always
+  links:
+   - busybox1:box1
+ busybox3:
+  image: busybox
+  restart: always
+  links:
+   - busybox2:box2
+...
