@@ -1,0 +1,3 @@
+FROM ubuntu
+MAINTAINER rajesh
+ADD http://mirrors.jenkins.io/war-stable/latest/jenkins.war /
