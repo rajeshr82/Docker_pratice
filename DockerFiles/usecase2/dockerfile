@@ -1,0 +1,5 @@
+FROM centos
+MAINTAINER Josh
+CMD ["date"]
+CMD ["ls","-la"]
+
