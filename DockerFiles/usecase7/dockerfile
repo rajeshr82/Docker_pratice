@@ -1,0 +1,6 @@
+FROM ubuntu
+MAINTAINER rajarikam
+ADD http://mirrors.jenkins.io/war-stable/latest/jenkins.war /
+RUN apt-get update
+RUN apt-get install -y openjdk-8-jdk
+ENTRYPOINT ["java","-jar","jenkins.war"]
